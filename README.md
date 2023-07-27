@@ -1,4 +1,4 @@
-# MEAN stack Authentication and Authorization example
+# MEAN stack NodeJS_Express_MongoDB_Angular-Authentication-Authorization
 
 Build MEAN stack JWT Authentication & Authorization example with HttpOnly Cookie and JWT.
 
