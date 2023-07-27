@@ -46,21 +46,21 @@ db.mongoose
   });
 
 // Manually set CORS headers for all routes
-// app.use((req, res, next) => {
-//   res.header("Access-Control-Allow-Origin", "http://localhost:8081");
-//   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-//   res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-//   res.header("Access-Control-Allow-Credentials", "true");
-//   res.header("Access-Control-Expose-Headers", "Authorization");
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "http://localhost:8081");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.header("Access-Control-Allow-Credentials", "true");
+  res.header("Access-Control-Expose-Headers", "Authorization");
 
-//   // If it's a preflight request (OPTIONS), respond immediately with a 200 status
-//   if (req.method === "OPTIONS") {
-//     res.sendStatus(200);
-//   } else {
-//     // Continue with the actual request
-//     next();
-//   }
-// });
+  // If it's a preflight request (OPTIONS), respond immediately with a 200 status
+  if (req.method === "OPTIONS") {
+    res.sendStatus(200);
+  } else {
+    // Continue with the actual request
+    next();
+  }
+});
 
 // simple route
 app.get("/", (req, res) => {
